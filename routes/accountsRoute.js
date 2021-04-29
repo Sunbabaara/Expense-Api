@@ -1,12 +1,12 @@
 const express =require("express");
 const {createAccount, getAllAccounts, getSingleAccount, updateAccount, deleteAccount} =require ("../controllers/accountsController")
-import protect from "../middlewares/authMiddleware";
+const protect = require ("../middlewares/authMiddleware");
 
 const router = express.Router()
 
 
 router.route("/")
-.post(protect, createAccount)
+.post(createAccount)
 .get(getAllAccounts)
 router.route("/:_id")
 .get(protect, getSingleAccount)
