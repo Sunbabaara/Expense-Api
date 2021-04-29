@@ -3,6 +3,7 @@ const dotenv =require("dotenv");
 const morgan = require("morgan");
 const connectDB = require("./config/connectDB");
 const accountsRoute =require("./routes/accountsRoute");
+const userRoute =require("./routes/userRoute");
 
 dotenv.config();
 
@@ -17,6 +18,7 @@ app.use(morgan("dev"));
 
 //routes
 app.use("/api/v1/accounts", accountsRoute)
+app.use("/api/v1/users", userRoute)
 
 
 
