@@ -52,4 +52,4 @@ const deleteAccount = async (req, res)=>{
         res.status(404).json({error:"Account not found"})
     }
 }
-module.exports = {createAccount, getAllAccounts, getSingleAccount, deleteAccount,updateAccount}
+module.exports = {createAccount, getAllAccounts, getSingleAccount, deleteAccount, updateAccount}

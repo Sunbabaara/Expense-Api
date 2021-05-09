@@ -2,7 +2,7 @@ const User = require("../models/userSchema")
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const {validateAddUser} = require("../validations/userValidations")
-
+const getToken = require ("../utils/getToken")
 
 
 
