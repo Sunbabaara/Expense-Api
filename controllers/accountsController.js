@@ -1,15 +1,11 @@
 const Account = require("../models/accountSchema");
 
-
 //create an Account
 const createAccount = async (req, res)=>{
     const newAccount= new Account(
         {
             amount:req.body.amount,
-            type:req.body.type,
             note:req.body.note,
-            day:req.body.day,
-            
         } )
         await newAccount.save()
         res.status(201).json(newAccount);
@@ -33,9 +29,8 @@ const  updateAccount = async (req, res)=>{
     const foundAccount = await Account.findById(req.params._id)
     if (foundAccount) {
         foundAccount.amount = req.body.amount,
-        foundAccount.type = req.body.type,
-        foundAccount.note= req.body.note,
-        foundAccount.day = req.body.day
+        foundAccount.note= req.body.note
+        
 
         const updatedAccount = await foundAccount.save();
         res.json({updatedAccount})
